@@ -4,27 +4,29 @@ class Dino {
         this.x = 50;
         this.y = height - this.r;
         this.vy = 0;
-        this.gravity = 2;
+        this.gravity = 1.5; // Decreased gravity for higher jumps
     }
 
     jump() {
         if (this.y == height - this.r) {
-            this.vy = -25;
+            this.vy = -23; // Increased jump height
         }
     }
 
     hits(obstacle) {
-        var dinoX = this.x;
-        var dinoY = this.y;
-        var obstacleX = obstacle.x;
-        var obstacleY = obstacle.y;
+        let dinoX = this.x;
+        let dinoY = this.y;
+        let obstacleX = obstacle.x;
+        let obstacleY = obstacle.y;
 
         // Check if the dinosaur and the obstacle are overlapping
-        if (dinoX < obstacleX + obstacle.r &&
+        if (
+            dinoX < obstacleX + obstacle.r &&
             dinoX + this.r > obstacleX &&
             dinoY < obstacleY + obstacle.r &&
-            dinoY + this.r > obstacleY) {
-                return true;
+            dinoY + this.r > obstacleY
+        ) {
+            return true;
         }
         return false;
     }

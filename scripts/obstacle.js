@@ -1,10 +1,9 @@
 class Obstacle {
-    constructor() {
+    constructor(gap = 150) {
         this.r = 50; // Fixed size for the obstacles
         this.x = width;
-        this.y = height - this.r;
+        this.y = height - this.r - gap;
         this.speed = 5; // Initial speed of the obstacle
-        this.gap = 200; // Minimum gap between consecutive obstacles
     }
 
     move() {

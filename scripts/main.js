@@ -21,9 +21,13 @@ function draw() {
     if (!gameOver) {
         obstacleFrequency += 0.00001; // Gradually increase the frequency of obstacle creation
 
-        if (obstacles.length === 0 || (random(1) < obstacleFrequency && width - obstacles[obstacles.length - 1].x > 200)) {
+        if (obstacles.length === 0 || (random(1) < obstacleFrequency && width - obstacles[obstacles.length - 1].x > 200)) { 
             // Check if no obstacles exist OR if the last obstacle has crossed a certain point
-            obstacles.push(new Obstacle());
+            if (score < 10) {
+                obstacles.push(new Obstacle(100)); // Easy difficulty for the first 10 obstacles
+            } else {
+                obstacles.push(new Obstacle()); // Normal difficulty after the first 10 obstacles
+            }
         }
 
         for (let i = obstacles.length - 1; i >= 0; i--) {
