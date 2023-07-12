@@ -21,7 +21,7 @@ function draw() {
     if (!gameOver) {
         obstacleFrequency += 0.00001; // Gradually increase the frequency of obstacle creation
 
-        if (obstacles.length === 0 || (random(1) < obstacleFrequency && width - obstacles[obstacles.length - 1].x > 150)) { 
+        if (obstacles.length === 0 || (random(1) < obstacleFrequency && width - obstacles[obstacles.length - 1].x > 200)) {
             // Check if no obstacles exist OR if the last obstacle has crossed a certain point
             obstacles.push(new Obstacle());
         }

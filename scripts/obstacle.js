@@ -3,7 +3,8 @@ class Obstacle {
         this.r = 50; // Fixed size for the obstacles
         this.x = width;
         this.y = height - this.r;
-        this.speed = 5;
+        this.speed = 5; // Initial speed of the obstacle
+        this.gap = 200; // Minimum gap between consecutive obstacles
     }
 
     move() {
