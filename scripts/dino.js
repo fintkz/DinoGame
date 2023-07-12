@@ -2,7 +2,7 @@ class Dino {
     constructor() {
         this.r = 50;
         this.x = 50;
-        this.y = height - this.r;
+        this.y = height - this.r + 10; // Adjusted y position to align the dino with the ground level
         this.vy = 0;
         this.gravity = 1.5; // Decreased gravity for higher jumps
     }
